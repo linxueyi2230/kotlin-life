@@ -32,12 +32,17 @@ open class MainActivity : SimpleActivity(), BaseMainFragment.OnBackToFirstListen
 
     lateinit var mFragments: ArrayList<SupportFragment>
     override fun initEventAndData() {
+//        mFragments = ArrayList<SupportFragment>()
+//        mFragments.add(VeerFragment())
+//        mFragments.add(VideoFragment())
+//        mFragments.add(MusicFragment())
+//        mFragments.add(EssayFragment())
+//        loadMultipleRootFragment(R.id.act_container, 0, mFragments[0], mFragments[1], mFragments[2], mFragments[3])
         mFragments = ArrayList<SupportFragment>()
         mFragments.add(VeerFragment())
         mFragments.add(VideoFragment())
-        mFragments.add(MusicFragment())
         mFragments.add(EssayFragment())
-        loadMultipleRootFragment(R.id.act_container, 0, mFragments[0], mFragments[1], mFragments[2], mFragments[3])
+        loadMultipleRootFragment(R.id.act_container, 0, mFragments[0], mFragments[1], mFragments[2])
 
         initView()
     }
@@ -45,9 +50,9 @@ open class MainActivity : SimpleActivity(), BaseMainFragment.OnBackToFirstListen
 
     private fun initView() {
         bottom_navigation_bar
-                .addItem(BottomNavigationItem(R.drawable.panorama_icon, "全景图").setActiveColor("#485A66")).setInActiveColor("#CCCCCC")
+                .addItem(BottomNavigationItem(R.drawable.panorama_icon, "全景图").setActiveColor("#485A66")).setInActiveColor("#6c4a41")
                 .addItem(BottomNavigationItem(R.drawable.movie_icon, "视频").setActiveColor("#6c4a41"))
-                .addItem(BottomNavigationItem(R.drawable.music_icon, "音乐").setActiveColor("#008867"))
+                //.addItem(BottomNavigationItem(R.drawable.music_icon, "音乐").setActiveColor("#008867"))
                 .addItem(BottomNavigationItem(R.drawable.book_icon, "散文诗").setActiveColor("#8b6b64"))
                 .initialise()
         bottom_navigation_bar.setBackgroundStyle(BACKGROUND_STYLE_RIPPLE)
@@ -101,5 +106,9 @@ open class MainActivity : SimpleActivity(), BaseMainFragment.OnBackToFirstListen
 
     override fun onBackToFirstFragment() {
         bottom_navigation_bar.selectTab(0)
+    }
+
+    override fun onBackPressedSupport() {
+        super.onBackPressedSupport()
     }
 }

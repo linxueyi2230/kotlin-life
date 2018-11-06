@@ -63,7 +63,6 @@ class VeerDetailFragment(id: String) : BaseFragment<KuulaImagePresenter>(), Kuul
                 .pinchEnabled(true)
                 .build(myGLSurfaceView)
         glSurfaceView.addView(myGLSurfaceView)
-
     }
 
     override fun error(throwable: Throwable) {
