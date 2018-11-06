@@ -36,8 +36,8 @@ public class MainActivity extends SimpleActivity implements BaseMainFragment.OnB
 
 
     private static final String TAG = "Main";
-    @BindView(R.id.floating_search_view)
-    FloatingSearchView mSearchView;
+//    @BindView(R.id.floating_search_view)
+//    FloatingSearchView mSearchView;
     @BindView(R.id.bottom_navigation_bar)
     BottomNavigationBar mNavigationView;
 
@@ -113,9 +113,9 @@ public class MainActivity extends SimpleActivity implements BaseMainFragment.OnB
     @Subscribe
     public void hide(String isHide) {
         if (isHide.equals("true")) {
-            mSearchView.setVisibility(View.GONE);
+//            mSearchView.setVisibility(View.GONE);
         } else {
-            mSearchView.setVisibility(View.VISIBLE);
+//            mSearchView.setVisibility(View.VISIBLE);
         }
     }
 

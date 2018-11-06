@@ -45,14 +45,14 @@ open class MainActivity : SimpleActivity(), BaseMainFragment.OnBackToFirstListen
 
     private fun initView() {
         bottom_navigation_bar
-                .addItem(BottomNavigationItem(R.drawable.panorama_icon, "全景图").setActiveColor("#485A66"))
-                .addItem(BottomNavigationItem(R.drawable.movie_icon, "视频").setActiveColor("#6c4a41").setInActiveColor("#CCCCCC"))
+                .addItem(BottomNavigationItem(R.drawable.panorama_icon, "全景图").setActiveColor("#485A66")).setInActiveColor("#CCCCCC")
+                .addItem(BottomNavigationItem(R.drawable.movie_icon, "视频").setActiveColor("#6c4a41"))
                 .addItem(BottomNavigationItem(R.drawable.music_icon, "音乐").setActiveColor("#008867"))
                 .addItem(BottomNavigationItem(R.drawable.book_icon, "散文诗").setActiveColor("#8b6b64"))
                 .initialise()
         bottom_navigation_bar.setBackgroundStyle(BACKGROUND_STYLE_RIPPLE)
         bottom_navigation_bar.setMode(MODE_FIXED)
-        bottom_navigation_bar.setAutoHideEnabled(true)
+        bottom_navigation_bar.setAutoHideEnabled(false)
 
         bottom_navigation_bar.setTabSelectedListener(object : BottomNavigationBar.OnTabSelectedListener {
             override fun onTabSelected(position: Int) {
@@ -76,15 +76,15 @@ open class MainActivity : SimpleActivity(), BaseMainFragment.OnBackToFirstListen
     @Subscribe
     fun hide(isHide: String) {
         if (isHide == "true") {
-            floating_search_view.setVisibility(View.GONE)
+//            floating_search_view.setVisibility(View.GONE)
         } else if(isHide == "false"){
-            floating_search_view.setVisibility(View.VISIBLE)
+//            floating_search_view.setVisibility(View.VISIBLE)
         } else if(isHide == "tab_false"){
-            floating_search_view.setVisibility(View.VISIBLE)
+//            floating_search_view.setVisibility(View.VISIBLE)
             bottom_navigation_bar.setVisibility(View.VISIBLE)
         }else if(isHide == "tab_true"){
-            floating_search_view.setVisibility(View.GONE)
-            bottom_navigation_bar.setVisibility(View.GONE)
+//            floating_search_view.setVisibility(View.GONE)
+            bottom_navigation_bar.setVisibility(View.VISIBLE)
         }
     }
 

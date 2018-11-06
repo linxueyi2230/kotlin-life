@@ -100,7 +100,7 @@ public class EssayHomeDetailFragment extends BaseFragment<EssayHomeDetailPresent
         toolbar.setNavigationOnClickListener(v -> {
             _mActivity.onBackPressed();
         });
-        toolbar.inflateMenu(R.menu.video_menu);
+        //toolbar.inflateMenu(R.menu.video_menu);
     }
 
     @Override

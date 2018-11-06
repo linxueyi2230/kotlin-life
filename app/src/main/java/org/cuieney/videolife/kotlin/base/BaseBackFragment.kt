@@ -13,7 +13,7 @@ abstract class BaseBackFragment : SupportFragment() {
     protected fun initToolbarNav(toolbar: Toolbar) {
         toolbar.setNavigationIcon(R.mipmap.ic_arrow_back_white_24dp)
         toolbar.setNavigationOnClickListener { v -> _mActivity.onBackPressed() }
-        toolbar.inflateMenu(R.menu.video_menu)
+//        toolbar.inflateMenu(R.menu.video_menu)
 
     }
 
