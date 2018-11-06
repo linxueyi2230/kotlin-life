@@ -40,11 +40,11 @@ class MusicDetailFragment(dataBean: MusicListBean) : BaseBackFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        dataBean = arguments.getParcelable(ARG_ITEM)
-        preference(context,"JSON", Gson().toJson(dataBean.tracks))
+        dataBean = arguments!!.getParcelable(ARG_ITEM)
+        preference(context!!.applicationContext,"JSON", Gson().toJson(dataBean.tracks))
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val inflate = inflater!!.inflate(R.layout.music_home_detail_fragment, container, false)
         return inflate
     }
@@ -71,7 +71,7 @@ class MusicDetailFragment(dataBean: MusicListBean) : BaseBackFragment() {
                     override fun onStartTransform() {}
 
                     override fun onEndTransform() {
-                        JumpUtils.goToMusicPlayer(activity,img_detail, dataBean)
+                        JumpUtils.goToMusicPlayer(activity!!,img_detail, dataBean)
                     }
                 }).transformTo(img_detail)
             }

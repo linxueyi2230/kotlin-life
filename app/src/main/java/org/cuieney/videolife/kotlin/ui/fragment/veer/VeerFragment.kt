@@ -13,7 +13,7 @@ import org.cuieney.videolife.kotlin.ui.fragment.music.MusicHomeFragment
  */
 class VeerFragment : BaseMainFragment() {
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater!!.inflate(R.layout.veer_fragment, container, false)
         return view
     }

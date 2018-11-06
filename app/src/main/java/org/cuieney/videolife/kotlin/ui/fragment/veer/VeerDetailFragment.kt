@@ -39,7 +39,7 @@ class VeerDetailFragment(id: String) : BaseFragment<KuulaImagePresenter>(), Kuul
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        id = arguments.getString("id")
+        id = arguments!!.getString("id")
 
     }
 

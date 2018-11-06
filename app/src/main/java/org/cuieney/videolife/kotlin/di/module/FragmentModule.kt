@@ -15,6 +15,6 @@ import org.cuieney.videolife.di.PerFragment
 
     @Provides
     @PerFragment
-    fun provideActivity(): FragmentActivity = mFragment.activity
+    fun provideActivity(): FragmentActivity = mFragment.activity!!
 
 }

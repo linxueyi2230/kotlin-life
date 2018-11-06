@@ -31,9 +31,10 @@ abstract class BaseFragment<T:BasePresenter> : SupportFragment(),BaseView{
     var isInited :Boolean = false
 
     override fun onAttach(context: Context) {
+        super.onAttach(context)
         mActivity = context as Activity
         mContext = context
-        super.onAttach(context)
+        //super.onAttach(context)
     }
 
 
@@ -49,14 +50,14 @@ abstract class BaseFragment<T:BasePresenter> : SupportFragment(),BaseView{
         return FragmentModule(this)
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         mView = inflater!!.inflate(getLayoutId(), null)
         initInject()
         return mView
     }
 
 
-    override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mUnBinder = ButterKnife.bind(this, view!!)
         if (savedInstanceState == null) {

@@ -34,10 +34,10 @@ class VideoDetailFragment(dataBean: DataBean) :BaseBackFragment(){
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        dataBean = arguments.getParcelable(ARG_ITEM)
+        dataBean = arguments!!.getParcelable(ARG_ITEM)
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val inflate = inflater!!.inflate(R.layout.video_home_detail_fragment, container, false)
         return inflate
     }
@@ -70,7 +70,7 @@ class VideoDetailFragment(dataBean: DataBean) :BaseBackFragment(){
                     override fun onStartTransform() {}
 
                     override fun onEndTransform() {
-                        JumpUtils.goToVideoPlayer(activity, img_detail, dataBean)
+                        JumpUtils.goToVideoPlayer(activity!!, img_detail, dataBean)
                     }
                 }).transformTo(img_detail)
             }

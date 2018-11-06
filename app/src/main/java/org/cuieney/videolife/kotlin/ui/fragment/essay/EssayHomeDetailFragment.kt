@@ -42,8 +42,10 @@ class EssayHomeDetailFragment(pTypeId:String,pSourceId:String): BaseFragment<Ess
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         var bundle = arguments
-        typeId = Integer.parseInt(bundle["id"] as String)
-        sourceId = Integer.parseInt(bundle["sourceId"] as String)
+        if (bundle !=null){
+            typeId = Integer.parseInt(bundle["id"] as String)
+            sourceId = Integer.parseInt(bundle["sourceId"] as String)
+        }
     }
 
     override fun error(throwable: Throwable) {

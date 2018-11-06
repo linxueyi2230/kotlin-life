@@ -2,13 +2,13 @@ apply plugin: 'com.android.library'
 
 android {
 
-    compileSdkVersion 26
-    buildToolsVersion "26.0.2"
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
 
     defaultConfig {
 
-        minSdkVersion 19
-        targetSdkVersion 26
+        minSdkVersion 17
+        targetSdkVersion 27
 
         versionCode 1
         versionName "1.0"
@@ -32,15 +32,15 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    api fileTree(dir: 'libs', include: ['*.jar'])
     def viewDependencies = rootProject.ext.viewDependencies
     def dataDependencies = rootProject.ext.dataDependencies
-    compile viewDependencies.ijkplayer_java
-    compile viewDependencies.ijkplayer_exo
-    compile viewDependencies.transitionseverywhere
-    compile dataDependencies.videocache
-    compile androidDependencies.support_v4
-    compile androidDependencies.appcompat_v7
+    api viewDependencies.ijkplayer_java
+    api viewDependencies.ijkplayer_exo
+    api viewDependencies.transitionseverywhere
+    api dataDependencies.videocache
+    api androidDependencies.support_v4
+    api androidDependencies.appcompat_v7
 }
 
 //apply from: '../bintray.gradle'
