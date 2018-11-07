@@ -20,8 +20,18 @@ android {
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         vectorDrawables.generatedDensities = ['hdpi', 'xxhdpi']
+        flavorDimensions "versionCode"
     }
 
+    productFlavors {
+        xiaomi {}
+        xiaomirich {}
+        huawei {}
+        wandoujia {}
+        vivo {}
+        baidu {}
+
+    }
     //dagger2 和 butterknife冲突
     packagingOptions {
         exclude 'META-INF/services/javax.annotation.processing.Processor'
@@ -114,7 +124,7 @@ dependencies {
     implementation project(path: ':vrlib')
 
     //blockcanary
-    implementation 'com.github.markzhai:blockcanary-android:1.5.0'
+    //implementation 'com.github.markzhai:blockcanary-android:1.5.0'
     debugImplementation 'com.github.markzhai:blockcanary-android:1.5.0'
     releaseImplementation 'com.github.markzhai:blockcanary-no-op:1.5.0'
 
