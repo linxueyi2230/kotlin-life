@@ -50,7 +50,7 @@ open class MainActivity : SimpleActivity(), BaseMainFragment.OnBackToFirstListen
 
     private fun initView() {
         bottom_navigation_bar
-                .addItem(BottomNavigationItem(R.drawable.panorama_icon, "全景图").setActiveColor("#485A66")).setInActiveColor("#6c4a41")
+                .addItem(BottomNavigationItem(R.drawable.panorama_icon, "全景图").setActiveColor("#008867"))
                 .addItem(BottomNavigationItem(R.drawable.movie_icon, "视频").setActiveColor("#6c4a41"))
                 //.addItem(BottomNavigationItem(R.drawable.music_icon, "音乐").setActiveColor("#008867"))
                 .addItem(BottomNavigationItem(R.drawable.book_icon, "散文诗").setActiveColor("#8b6b64"))
@@ -65,8 +65,8 @@ open class MainActivity : SimpleActivity(), BaseMainFragment.OnBackToFirstListen
                 when (position) {
                     0 -> StatusBarUtil.setColor(this@MainActivity, Color.parseColor("#6c4a41"))
                     1 -> StatusBarUtil.setColor(this@MainActivity, Color.parseColor("#008867"))
-                    2 -> StatusBarUtil.setColor(this@MainActivity, Color.parseColor("#8b6b64"))
-                    3 -> StatusBarUtil.setColor(this@MainActivity, Color.parseColor("#485A66"))
+//                    2 -> StatusBarUtil.setColor(this@MainActivity, Color.parseColor("#8b6b64"))
+                    2 -> StatusBarUtil.setColor(this@MainActivity, Color.parseColor("#485A66"))
                 }
             }
 
