@@ -2,6 +2,7 @@ package org.cuieney.videolife.kotlin.base
 
 import android.content.Context
 import me.yokeyword.fragmentation.SupportFragment
+import org.cuieney.videolife.kotlin.ui.fragment.essay.EssayFragment
 import org.cuieney.videolife.kotlin.ui.fragment.veer.VeerFragment
 import org.cuieney.videolife.kotlin.ui.fragment.video.VideoFragment
 
@@ -37,7 +38,7 @@ abstract class BaseMainFragment : SupportFragment() {
         if (childFragmentManager.backStackEntryCount > 1) {
             popChild()
         } else {
-            if (this is VeerFragment) {   // 如果是 第一个Fragment 则退出app
+            if (this is VeerFragment || this is VideoFragment || this is EssayFragment) {   // 如果是 第一个Fragment 则退出app
                 _mActivity.finish()
             } else {                                    // 如果不是,则回到第一个Fragment
                 _mBackToFirstListener!!.onBackToFirstFragment()
